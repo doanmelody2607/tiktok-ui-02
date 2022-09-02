@@ -41,7 +41,7 @@ module.exports = function override(config, env) {
 npm i --save-dev babel-plugin-module-resolver
 ```
 
-#### 1) Specify the plugin in your .babelrc with the custom root or alias. Here's an example:
+#### 1) Specify the plugin in your `.babelrc` with the custom root or alias. Here's an example:
 
 ```json
 {
@@ -130,6 +130,12 @@ module.exports = override(
 npm i -D sass
 ```
 
+-   Install classnames
+
+```bash
+npm i classnames
+```
+
 -   Reset CSS
 
 ```css
@@ -162,4 +168,59 @@ body {
 
 ```bash
 npm i react-router-dom
+```
+
+## `fontawesome`
+
+```json
+"@fortawesome/fontawesome-svg-core": "^1.3.0",
+"@fortawesome/free-brands-svg-icons": "^6.0.0",
+"@fortawesome/free-regular-svg-icons": "^6.0.0",
+"@fortawesome/free-solid-svg-icons": "^6.0.0",
+"@fortawesome/react-fontawesome": "^0.1.17",
+```
+
+## `Tippy React`
+
+```bash
+npm i @tippyjs/react
+```
+
+### 1) Default Tippy
+
+```js
+import React from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // optional
+
+const StringContent = () => (
+    <Tippy content="Hello">
+        <button>My button</button>
+    </Tippy>
+);
+
+const JSXContent = () => (
+    <Tippy content={<span>Tooltip</span>}>
+        <button>My button</button>
+    </Tippy>
+);
+```
+
+### 2) Headless Tippy
+
+```js
+import React from 'react';
+import Tippy from '@tippyjs/react/headless'; // different import path!
+
+const HeadlessTippy = () => (
+    <Tippy
+        render={(attrs) => (
+            <div className="box" tabIndex="-1" {...attrs}>
+                My tippy box
+            </div>
+        )}
+    >
+        <button>My button</button>
+    </Tippy>
+);
 ```

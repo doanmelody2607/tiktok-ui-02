@@ -4,6 +4,7 @@
 :root {
     --primary: #fe2c55;
     --black: #000;
+    --white: #fff;
     --text-color: #333;
 
     // Default layout
@@ -26,6 +27,7 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed;
+    color: var(--text-color);
 }
 
 button,
